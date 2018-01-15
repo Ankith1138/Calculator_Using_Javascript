@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Strict//EN”
+“http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd”>
+<html xmlns=”http://www.w3.org/1999/xhtml”>
+<head>
+<meta http-equiv=”Content-Type” content=”text/html; charset=utf-8” />
+<title>Calculator.html</title>
+<link rel = "stylesheet" href = "calculatorcss.css" >
+<script type = "text/javascript">
+    //<!--[CDATA[
+	   
+	   function fun(val){
+	     /* code for calculation */
+		 if( val == 'C'){
+		   document.getElementById('screen').value = '0';
+		 }else if( document.getElementById('screen').value == '0' ){
+		   document.getElementById('screen').value = val; // initilly zero now add first character
+		 }else {
+		   document.getElementById('screen').value += val; // concatenate the chars
+		 }
+	   } /* end of fun */
+	   
+	   function calculate(equation){
+	     var answer = eval(equation); /* evalute and assign the result */
+		 document.getElementById('screen').value = answer;
+	   } /* end of calculate*/
+	//]]-->
+  </script>
+</head>
+
+<body>
+<div id = "header">
+  <h1>A Simple Calculator</h1>
+  
+</div>
+<div id = "box">
+  <div id = "scrbox">
+  <input type = "text" id = "screen" />
+    <!-- ouput apperas here-->
+  </div>
+  <div class = "keys">
+    <p>
+	  <input type = "button" class = "gray" value = "C" onclick = "fun(this.value);" />
+	  <input type = "button" class = "gray" value = "()" onclick = "fun(this.value);" />
+	  <input type = "button" class = "gray" value = "%" onclick = "fun(this.value);" />
+	  <input type = "button" class = "gray" value = "/" onclick = "fun(this.value);" />
+	</p>
+	
+	<p>
+	  <input type = "button" class = "gray" value = "7" onclick = "fun(this.value);" />
+	  <input type = "button" class = "gray" value = "8" onclick = "fun(this.value);" />
+	  <input type = "button" class = "gray" value = "9" onclick = "fun(this.value);" />
+	  <input type = "button" class = "gray" value = "*" onclick = "fun(this.value);" />
+	</p>
+	
+	<p>
+	  <input type = "button" class = "gray" value = "4" onclick = "fun(this.value);" />
+	  <input type = "button" class = "gray" value = "5" onclick = "fun(this.value);" />
+	  <input type = "button" class = "gray" value = "6" onclick = "fun(this.value);" />
+	  <input type = "button" class = "gray" value = "-" onclick = "fun(this.value);" />
+	</p>
+	
+	<p>
+	  <input type = "button" class = "gray" value = "3" onclick = "fun(this.value);" />
+	  <input type = "button" class = "gray" value = "2" onclick = "fun(this.value);" />
+	  <input type = "button" class = "gray" value = "1" onclick = "fun(this.value);" />
+	  <input type = "button" class = "gray" value = "+" onclick = "fun(this.value);" />
+	</p>
+	
+	<p>
+	  <input type = "button" class = "gray" value = "." onclick = "fun(this.value);" />
+	  <input type = "button" class = "gray" value = "0" onclick = "fun(this.value);" />
+	  <input type = "button" class = "gray" value = "+/-" onclick = "fun(this.value);" />
+	  <input type = "button" class = "gray" value = "="
+			 onclick="calculate(document.getElementById('screen').value);" />
+	</p>
+  </div> <!-- End of keys   -->
+</div> <!-- End of box  -->
+</body>
+</html>
